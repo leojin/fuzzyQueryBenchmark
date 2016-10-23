@@ -24,7 +24,7 @@ if (needDetail) {
 } else {
     bM.setDetailOff();
 }
-bM.execute('Regex Compile Head', ['time(s)', 'found'], function () {
+bM.execute('NodeJs Regex Compile Head (' + time + ' times)', ['time(s)', 'found'], function () {
     var tR = new lib.TimeRecord();
     var rst = 0;
     tR.tag();

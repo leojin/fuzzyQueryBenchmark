@@ -11,3 +11,6 @@ $SRC_ROOT/nodejs/testRegexHead.js "$1" "$2" "$3"
 $SRC_ROOT/nodejs/testRegexCompileHead.js "$1" "$2" "$3"
 
 # php
+php $SRC_ROOT/php/testStrPos.php "$1" "$2" "$3"
+php $SRC_ROOT/php/testRegexAll.php "$1" "$2" "$3"
+php $SRC_ROOT/php/testRegexHead.php "$1" "$2" "$3"

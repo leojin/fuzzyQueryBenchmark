@@ -23,7 +23,7 @@ if (needDetail) {
 } else {
     bM.setDetailOff();
 }
-bM.execute('Regex All', ['time(s)', 'found'], function () {
+bM.execute('NodeJs Regex All (' + time + ' times)', ['time(s)', 'found'], function () {
     var tR = new lib.TimeRecord();
     var rst = 0;
     tR.tag();
