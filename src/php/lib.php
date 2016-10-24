@@ -48,7 +48,7 @@ class BenchMark {
         }
         function rstMapFunc ($v) {
             $time = Temp_Storage::get('time');
-            return round(($v / $time), 6);
+            return round(($v / $time), 5);
         }
         $rst = array_reduce($rec, 'rstReduceFunc', $initial);
         $rst = array_map('rstMapFunc', $rst);
