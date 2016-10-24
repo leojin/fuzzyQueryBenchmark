@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset='utf8')
+    title fuzzyQueryBenchmark-WebBrowser
+  body
+    table
+      tr
+        td
+          span queryWord
+        td
+          input(type='text', name="queryWord", value=queryWord, disabled)
+      tr
+        td
+          span times
+        td
+          input(type='text', name="times", value=times, disabled)
+      tr
+        td
+          span needDetail
+        td
+          input(type='text', name="needDetail", value=needDetail, disabled)
+    script(src='/javascripts/jquery-1.12.4.min.js')
+    script(src='/javascripts/lib.js')
+    script(src='/javascripts/main.js')
