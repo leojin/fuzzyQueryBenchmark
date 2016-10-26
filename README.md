@@ -22,8 +22,8 @@ usage ./utils/start.sh [options] [args] <TEST PROJECT1> <TEST PROJECT2> ...
 Testname with word 'all' acts like %str%.
 Testname with word 'head' acts like str%.
 
-In nodejs and chrome, the javascript engine is v8, v8 compile regex automatically, so you see no promotion after `compile`.
-But in python, compile regex can take a  huge promotion.
+In nodejs and chrome, the javascript engine is v8, v8 compile regex automatically, so there is no promotion after the `compile`.
+But in python, compiling regex can take a huge promotion.
 
 In mysql, fuzzy query like `str%` can use index, but `%str%` can't.
 
