@@ -19,6 +19,15 @@ usage ./utils/start.sh [options] [args] <TEST PROJECT1> <TEST PROJECT2> ...
 -t ARG     times in every test, default: 10
 -d ARG     [on/off] need detail info in every test, default: off
 ```
+Testname with word 'all' acts like %str%.
+Testname with word 'head' acts like str%.
+
+In nodejs and chrome, the javascript engine is v8, v8 compile regex automatically, so you see no promotion after `compile`.
+But in python, compile regex can take a  huge promotion.
+
+In mysql, fuzzy query like `str%` can use index, but `%str%` can't.
+
+What happened to php？
 
 #My Test
 The following output was created in my env(queryWord：i5y      times: 15).
