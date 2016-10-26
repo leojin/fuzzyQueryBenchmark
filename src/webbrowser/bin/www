@@ -8,11 +8,15 @@ var app = require('../app');
 var debug = require('debug')('webbrowser:server');
 var http = require('http');
 
+var args = process.argv.splice(2);
+
+var serverPort = args.length ? args[0] : '8989';
+
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '8989');
+var port = normalizePort(serverPort);
 app.set('port', port);
 
 /**
@@ -83,8 +87,5 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  console.log('Listening on ' + addr.address + ':' + addr.port);
 }

@@ -7,7 +7,7 @@ datadir     = {mysql_db_dir}/data
 log-error   = {mysql_db_dir}/log/mysql.err
 socket      = {mysql_db_dir}/var/mysqld.sock
 pid-file    = {mysql_db_dir}/var/mysqld.pid
-#basedir    = {mysql_install_path}
+basedir    = {mysql_install_path}
 skip-external-locking
 key_buffer_size = 384M
 max_allowed_packet = 1M
