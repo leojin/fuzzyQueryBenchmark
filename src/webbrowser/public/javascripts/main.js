@@ -7,7 +7,7 @@ var dataLen;
 var bM;
 
 var testIndexOf = function () {
-    bM.execute('NodeJs IndexOf (' + times + ' times)', ['time(s)', 'found'], function () {
+    bM.execute('WebBrowser IndexOf (' + times + ' times)', ['time(s)', 'found'], function () {
         var tR = new TimeRecord();
         var rst = 0;
         tR.tag();
@@ -22,7 +22,7 @@ var testIndexOf = function () {
 };
 
 var testRegexAll = function () {
-    bM.execute('NodeJs Regex All (' + times + ' times)', ['time(s)', 'found'], function () {
+    bM.execute('WebBrowser Regex All (' + times + ' times)', ['time(s)', 'found'], function () {
         var tR = new TimeRecord();
         var rst = 0;
         var reg = new RegExp(preg_quote(queryWord));
@@ -38,7 +38,7 @@ var testRegexAll = function () {
 };
 
 var testRegexCompileAll = function () {
-    bM.execute('NodeJs Regex Compile All (' + times + ' times)', ['time(s)', 'found'], function () {
+    bM.execute('WebBrowser Regex Compile All (' + times + ' times)', ['time(s)', 'found'], function () {
         var tR = new TimeRecord();
         var rst = 0;
         var reg = new RegExp(preg_quote(queryWord));
@@ -55,7 +55,7 @@ var testRegexCompileAll = function () {
 };
 
 var testRegexHead = function () {
-    bM.execute('NodeJs Regex Head (' + times + ' times)', ['time(s)', 'found'], function () {
+    bM.execute('WebBrowser Regex Head (' + times + ' times)', ['time(s)', 'found'], function () {
         var tR = new TimeRecord();
         var rst = 0;
         var reg = new RegExp('^' + preg_quote(queryWord));
@@ -71,7 +71,7 @@ var testRegexHead = function () {
 };
 
 var testRegexCompileHead = function () {
-    bM.execute('NodeJs Regex Compile Head (' + times + ' times)', ['time(s)', 'found'], function () {
+    bM.execute('WebBrowser Regex Compile Head (' + times + ' times)', ['time(s)', 'found'], function () {
         var tR = new TimeRecord();
         var rst = 0;
         var reg = new RegExp('^' + preg_quote(queryWord));
