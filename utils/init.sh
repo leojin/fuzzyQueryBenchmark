@@ -57,6 +57,11 @@ function entry_init_py() {
 
 function entry_init_mysql() {
     echo -e "\033[35m[INIT MYSQL]\033[0m"
+    cd $DATA_ROOT
+    ls mysql > /dev/null 2>&1
+    if [ "$?" == "0" ]; then
+        return
+    fi    
     check_bin "mysql_install_db"
     if [ "$?" != "0" ]; then
         return
