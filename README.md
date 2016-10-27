@@ -13,7 +13,7 @@ Every test will find the matched strings within 10,000 lines(data/list, this res
 
 usage ./utils/start.sh [options] [args] <TEST PROJECT1> <TEST PROJECT2> ...
 
-<TEST PROJECT> php、nodejs、python、webbrowser、mysql、sqlite
+<TEST PROJECT> php、hhvm、nodejs、python、webbrowser、mysql、sqlite
 
 -w ARG     query word, default: abc
 -t ARG     times in every test, default: 10
@@ -33,6 +33,7 @@ What happened to php？
 The following output was created in my env(queryWord：i5y      times: 15).
 
 * php 5.4.33
+* php 7.0.12
 * hhvm HipHop VM 3.0.1
 * node 4.3.2
 * python 2.7.3
@@ -76,17 +77,30 @@ BenchMark For PHP 5.4.33 Regex Head (15 times)
 AVE:    0.14784 5111
 
 【   PHP   】
+BenchMark For PHP 7.0.12 SubStr (15 times)
+  time(s) found
+AVE:  0.01063 13360
+
+BenchMark For PHP 7.0.12 Regex All (15 times)
+  time(s) found
+AVE:  0.02195 13360
+
+BenchMark For PHP 7.0.12 Regex Head (15 times)
+  time(s) found
+AVE:  0.01621 5111
+
+【   PHP   】
 BenchMark For PHP 5.5.99-hiphop SubStr (15 times)
-    time(s) found
-AVE:    0.00722 13360
+  time(s) found
+AVE:  0.00727 13360
 
 BenchMark For PHP 5.5.99-hiphop Regex All (15 times)
-    time(s) found
-AVE:    0.02045 13360
+  time(s) found
+AVE:  0.02051 13360
 
 BenchMark For PHP 5.5.99-hiphop Regex Head (15 times)
-    time(s) found
-AVE:    0.01479 5111
+  time(s) found
+AVE:  0.01485 5111
 
 【   Python   】
 BenchMark For Python Find (15 times)
