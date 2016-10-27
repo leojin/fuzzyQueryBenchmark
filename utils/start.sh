@@ -8,10 +8,12 @@ DATA_ROOT=$PATH_ROOT/data
 
 BIN_NODE="node"
 BIN_PHP="php"
+BIN_HHVM="hhvm"
 BIN_PYTHON="python"
 
 CASE_NODEJS="$BIN_NODE $SRC_ROOT/nodejs"
 CASE_PHP="$BIN_PHP $SRC_ROOT/php"
+CASE_HHVM="$BIN_HHVM $SRC_ROOT/php"
 CASE_PYTHON="$BIN_PYTHON $SRC_ROOT/python"
 CASE_WEBBROWSER="$SRC_ROOT/webbrowser"
 CASE_MYSQL="$SRC_ROOT/mysql"
@@ -84,6 +86,12 @@ function main() {
                 executeCmd "$CASE_PHP/testStrPos.php"
                 executeCmd "$CASE_PHP/testRegexAll.php"
                 executeCmd "$CASE_PHP/testRegexHead.php"
+                ;;
+            "hhvm")
+                echo -e "\033[34m【   PHP   】\033[0m"
+                executeCmd "$CASE_HHVM/testStrPos.php"
+                executeCmd "$CASE_HHVM/testRegexAll.php"
+                executeCmd "$CASE_HHVM/testRegexHead.php"
                 ;;
             "python")
                 echo -e "\033[34m【   Python   】\033[0m"

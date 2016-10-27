@@ -33,6 +33,7 @@ What happened to php？
 The following output was created in my env(queryWord：i5y      times: 15).
 
 * php 5.4.33
+* hhvm HipHop VM 3.0.1
 * node 4.3.2
 * python 2.7.3
 * mysql 5.5.50
@@ -62,17 +63,30 @@ BenchMark For NodeJs Regex Compile Head (15 times)
 AVE:	0.0054	5111
 
 【   PHP   】
-BenchMark For PHP SubStr (15 times)
-	time(s)	found
-AVE:	0.11354	13360
+BenchMark For PHP 5.4.33 SubStr (15 times)
+    time(s) found
+AVE:    0.11668 13360
 
-BenchMark For PHP Regex All (15 times)
-	time(s)	found
-AVE:	0.15287	13360
+BenchMark For PHP 5.4.33 Regex All (15 times)
+    time(s) found
+AVE:    0.13695 13360
 
-BenchMark For PHP Regex Head (15 times)
-	time(s)	found
-AVE:	0.13241	5111
+BenchMark For PHP 5.4.33 Regex Head (15 times)
+    time(s) found
+AVE:    0.14784 5111
+
+【   PHP   】
+BenchMark For PHP 5.5.99-hiphop SubStr (15 times)
+    time(s) found
+AVE:    0.00722 13360
+
+BenchMark For PHP 5.5.99-hiphop Regex All (15 times)
+    time(s) found
+AVE:    0.02045 13360
+
+BenchMark For PHP 5.5.99-hiphop Regex Head (15 times)
+    time(s) found
+AVE:    0.01479 5111
 
 【   Python   】
 BenchMark For Python Find (15 times)

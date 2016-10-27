@@ -13,6 +13,7 @@ $basePath = dirname(dirname(dirname(__FILE__)));
 $dataFile = $basePath . '/data/list';
 $dataSource = file_get_contents($dataFile);
 $dataArr = explode("\n", $dataSource);
+$phpversion = phpversion();
 
 $reg = '/' . preg_quote($queryWord) . '/';
 
@@ -35,7 +36,7 @@ function callback ($reg, $dataArr) {
     $tR->tag();
     return $tR->report($rst);
 }
-$bM->execute("PHP Regex All ($times times)", array('time(s)', 'found'), 'callback', $times, array(
+$bM->execute("PHP $phpversion Regex All ($times times)", array('time(s)', 'found'), 'callback', $times, array(
     $reg,
     $dataArr
 ));

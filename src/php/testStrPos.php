@@ -13,6 +13,7 @@ $basePath = dirname(dirname(dirname(__FILE__)));
 $dataFile = $basePath . '/data/list';
 $dataSource = file_get_contents($dataFile);
 $dataArr = explode("\n", $dataSource);
+$phpversion = phpversion();
 
 $bM = new BenchMark();
 if ($needDetail) {
@@ -33,7 +34,7 @@ function callback ($queryWord, $dataArr) {
     $tR->tag();
     return $tR->report($rst);
 }
-$bM->execute("PHP SubStr ($times times)", array('time(s)', 'found'), 'callback', $times, array(
+$bM->execute("PHP $phpversion SubStr ($times times)", array('time(s)', 'found'), 'callback', $times, array(
     $queryWord,
     $dataArr
 ));
