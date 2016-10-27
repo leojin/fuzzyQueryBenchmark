@@ -15,6 +15,7 @@ CASE_PHP="$BIN_PHP $SRC_ROOT/php"
 CASE_PYTHON="$BIN_PYTHON $SRC_ROOT/python"
 CASE_WEBBROWSER="$SRC_ROOT/webbrowser"
 CASE_MYSQL="$SRC_ROOT/mysql"
+CASE_SQLITE="$SRC_ROOT/sqlite"
 
 EXPRESS_PORT="8989"
 
@@ -36,7 +37,7 @@ Every test will find the matched strings within 10,000 lines(data/list, this res
 
 usage $scriptname [options] [args] <TEST PROJECT1> <TEST PROJECT2> ...
 
-<TEST PROJECT> php、nodejs、python、webbrowser、mysql
+<TEST PROJECT> php、nodejs、python、sqlite、mysql、webbrowser
 
 -w ARG     query word, default: abc
 -t ARG     times in every test, default: 10
@@ -102,6 +103,13 @@ function main() {
                 executeCmd "$CASE_MYSQL/testAllIndex.sh"
                 executeCmd "$CASE_MYSQL/testHeadIndex.sh"
                 kill `cat $mysqlDbDir/var/mysqld.pid`
+                ;;
+            "sqlite")
+                echo -e "\033[34m【   SQLite   】\033[0m"
+                executeCmd "$CASE_SQLITE/testAll.sh"
+                executeCmd "$CASE_SQLITE/testHead.sh"
+                executeCmd "$CASE_SQLITE/testAllIndex.sh"
+                executeCmd "$CASE_SQLITE/testHeadIndex.sh"
                 ;;
             "webbrowser")
                 echo -e "\033[34m【   WebBrowser   】\033[0m"

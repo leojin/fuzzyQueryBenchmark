@@ -13,7 +13,7 @@ Every test will find the matched strings within 10,000 lines(data/list, this res
 
 usage ./utils/start.sh [options] [args] <TEST PROJECT1> <TEST PROJECT2> ...
 
-<TEST PROJECT> php、nodejs、python、webbrowser、mysql
+<TEST PROJECT> php、nodejs、python、webbrowser、mysql、sqlite
 
 -w ARG     query word, default: abc
 -t ARG     times in every test, default: 10
@@ -36,6 +36,7 @@ The following output was created in my env(queryWord：i5y      times: 15).
 * node 4.3.2
 * python 2.7.3
 * mysql 5.5.50
+* sqlite 3.11.1
 * chrome 53.0.2785.143 m (64-bit)
 
 ```shell
@@ -110,6 +111,23 @@ AVE:	13360	0.0727865
 BenchMark For MYSQL str% WITH INDEX (15 times)
 	found	time(s)
 AVE:	5111	0.00360425
+
+【   SQLite   】
+BenchMark For SQLITE %str% NO INDEX (10 times)
+    found   time(s)
+AVE:    13360   0.0292
+
+BenchMark For SQLITE str% NO INDEX (10 times)
+    found   time(s)
+AVE:    5111    0.0209
+
+BenchMark For SQLITE %str% WITH INDEX (10 times)
+    found   time(s)
+AVE:    13360   0.0234
+
+BenchMark For SQLITE str% WITH INDEX (10 times)
+    found   time(s)
+AVE:    5111    0.0167
 
 【   WebBrowser   】
 BenchMark For WebBrowser IndexOf (15 times)

@@ -130,10 +130,55 @@ function entry_init_mysql() {
     kill `cat $mysqlDbDir/var/mysqld.pid`
 }
 
+function entry_init_sqlite() {
+    echo -e "\033[35m[INIT SQLITE3]\033[0m"
+    cd $DATA_ROOT
+    db_lite='list.lite'
+    ls $db_lite > /dev/null 2>&1
+    if [ "$?" == "0" ]; then
+        return
+    fi
+    check_bin "sqlite3"
+    if [ "$?" != "0" ]; then
+        return
+    fi
+    echo -e "\033[32mcreate database \033[0m"
+    sqlite3 $db_lite "create table fuzzy_query(noIndex varchar(100), withIndex varchar(100));"
+    i=0
+    vals=''
+    echo -e "\033[32mstart insert data \033[0m"
+    for line in `cat $DATA_ROOT/list`
+    do
+        if [ x"$vals" == x"" ]; then
+            vals="('$line', '$line')"
+        else
+            vals=$vals",('$line', '$line')"
+        fi
+        i=$[$i + 1]
+        if [ $(($i % 500)) == 0 ];then
+            sql='insert into fuzzy_query values '"$vals;"
+            sqlite3 $db_lite "$sql"
+            echo -en "inserted $i\r"
+            vals=''
+        fi
+    done
+    if [ x"$vals" != x"" ]; then
+        sql='insert into fuzzy_query values '"$vals;"
+        sqlite3 $db_lite "$sql"
+        echo -en "inserted $i\r"
+    fi
+    echo ""
+    echo -e "\033[32madd index \033[0m"
+    sql="create index idx_wd on fuzzy_query(withIndex);"
+    sqlite3 $db_lite "$sql"
+    echo ""
+}
+
 function main() {
     entry_check_bin
     entry_init_py
     entry_init_mysql
+    #entry_init_sqlite
 }
 
 main "$@"
