@@ -155,21 +155,21 @@ BenchMark For MYSQL str% WITH INDEX (15 times)
 AVE:	5111	0.00360425
 
 【   SQLite   】
-BenchMark For SQLITE %str% NO INDEX (10 times)
-    found   time(s)
-AVE:    13360   0.0292
+BenchMark For SQLITE %str% NO INDEX (15 times)
+	found	time(s)
+AVE:	13360	0.0292
 
-BenchMark For SQLITE str% NO INDEX (10 times)
-    found   time(s)
-AVE:    5111    0.0209
+BenchMark For SQLITE str% NO INDEX (15 times)
+	found	time(s)
+AVE:	5111	0.0209333
 
-BenchMark For SQLITE %str% WITH INDEX (10 times)
-    found   time(s)
-AVE:    13360   0.0234
+BenchMark For SQLITE %str% WITH INDEX (15 times)
+	found	time(s)
+AVE:	13360	0.0236667
 
-BenchMark For SQLITE str% WITH INDEX (10 times)
-    found   time(s)
-AVE:    5111    0.0167
+BenchMark For SQLITE str% WITH INDEX (15 times)
+	found	time(s)
+AVE:	5111	0.0166
 
 【   WebBrowser   】
 BenchMark For WebBrowser IndexOf (15 times)
