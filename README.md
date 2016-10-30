@@ -37,6 +37,7 @@ The following output was created in my env(queryWord：i5y      times: 15).
 * hhvm HipHop VM 3.0.1
 * node 4.3.2
 * python 2.7.3
+* java 1.8.0_101
 * mysql 5.5.50
 * sqlite 3.11.1
 * chrome 53.0.2785.143 m (64-bit)
