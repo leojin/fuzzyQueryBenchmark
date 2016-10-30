@@ -24,19 +24,23 @@ public class TestRegexAll extends BenchmarkCase {
     private Pattern reg;
     
     public TestRegexAll(String queryWord) {
-        this.name = "JAVA IndexOf";
+        this.name = "JAVA Regex All";
         this.title = new String[]{"time(s)", "found"};
         this.dataArr = new ArrayList<>();
         this.reg = Pattern.compile(".*" + RegexUtils.preg_quote(queryWord) + ".*"); 
         
-        File dataFile;
-        dataFile = new File("../../data/list");
+        File tmpFile;
+        tmpFile = new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath() + "/../../../../data/list");
         
-        if (!dataFile.isFile() || !dataFile.exists()) {
-            System.exit(1);
-        }
-
+        
         try {
+            File dataFile;
+            dataFile = new File(tmpFile.getCanonicalPath());
+            
+            if (!dataFile.isFile() || !dataFile.exists()) {
+                System.exit(1);
+            }
+            
             FileReader dataReader;
             dataReader = new FileReader(dataFile);
             
@@ -48,11 +52,8 @@ public class TestRegexAll extends BenchmarkCase {
             while ((content = dataBuffer.readLine()) != null) {
                 dataArr.add(content);
             }
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(TestRegexAll.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(TestRegexAll.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TestRegexAll.class.getName()).log(Level.SEVERE, null, ex); 
         }
     }
     

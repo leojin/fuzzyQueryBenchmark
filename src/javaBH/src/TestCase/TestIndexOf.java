@@ -22,19 +22,22 @@ public class TestIndexOf extends BenchmarkCase {
     private List<String> dataArr;
     
     public TestIndexOf(String queryWord) {
-        this.name = "JAVA Regex All";
+        this.name = "JAVA IndexOf";
         this.title = new String[]{"time(s)", "found"};
         this.dataArr = new ArrayList<>();
         this.queryWord = queryWord;
         
-        File dataFile;
-        dataFile = new File("../../data/list");
+        File tmpFile;
+        tmpFile = new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath() + "/../../../../data/list");
         
-        if (!dataFile.isFile() || !dataFile.exists()) {
-            System.exit(1);
-        }
-
         try {
+            File dataFile;
+            dataFile = new File(tmpFile.getCanonicalPath());
+            
+            if (!dataFile.isFile() || !dataFile.exists()) {
+                System.exit(1);
+            }
+            
             FileReader dataReader;
             dataReader = new FileReader(dataFile);
             

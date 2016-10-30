@@ -13,7 +13,7 @@ Every test will find the matched strings within 10,000 lines(data/list, this res
 
 usage ./utils/start.sh [options] [args] <TEST PROJECT1> <TEST PROJECT2> ...
 
-<TEST PROJECT> php、hhvm、nodejs、python、webbrowser、mysql、sqlite
+<TEST PROJECT> php、hhvm、nodejs、python、java、webbrowser、mysql、sqlite
 
 -w ARG     query word, default: abc
 -t ARG     times in every test, default: 10

@@ -10,6 +10,7 @@ BIN_NODE="node"
 BIN_PHP="php"
 BIN_HHVM="hhvm"
 BIN_PYTHON="python"
+BIN_JAVA="java"
 
 CASE_NODEJS="$BIN_NODE $SRC_ROOT/nodejs"
 CASE_PHP="$BIN_PHP $SRC_ROOT/php"
@@ -18,6 +19,7 @@ CASE_PYTHON="$BIN_PYTHON $SRC_ROOT/python"
 CASE_WEBBROWSER="$SRC_ROOT/webbrowser"
 CASE_MYSQL="$SRC_ROOT/mysql"
 CASE_SQLITE="$SRC_ROOT/sqlite"
+CASE_JAVA="$BIN_JAVA -jar $SRC_ROOT/javaBH/dist/javaBH.jar"
 
 EXPRESS_PORT="8989"
 
@@ -39,7 +41,7 @@ Every test will find the matched strings within 10,000 lines(data/list, this res
 
 usage $scriptname [options] [args] <TEST PROJECT1> <TEST PROJECT2> ...
 
-<TEST PROJECT> php、nodejs、python、sqlite、mysql、webbrowser
+<TEST PROJECT> php、nodejs、python、sqlite、mysql、java、webbrowser
 
 -w ARG     query word, default: abc
 -t ARG     times in every test, default: 10
@@ -100,6 +102,12 @@ function main() {
                 executeCmd "$CASE_PYTHON/testRegexCompileAll.py"
                 executeCmd "$CASE_PYTHON/testRegexHead.py"
                 executeCmd "$CASE_PYTHON/testRegexCompileHead.py"
+                ;;
+            "java")
+                echo -e "\033[34m【   JAVA   】\033[0m"
+                executeCmd "$CASE_JAVA TestRegexAll"
+                executeCmd "$CASE_JAVA TestRegexHead"
+                executeCmd "$CASE_JAVA TestIndexOf"
                 ;;
             "mysql")
                 echo -e "\033[34m【   Mysql   】\033[0m"
