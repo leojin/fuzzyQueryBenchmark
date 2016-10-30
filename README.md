@@ -123,6 +123,19 @@ BenchMark For Python Regex Compile Head (15 times)
 	time(s)	found
 AVE:	0.08374	5111.0
 
+【   JAVA   】
+Benchmark For JAVA Regex All(15 times)
+	time(s)	found
+AVE:	0.0664	13360.0
+
+Benchmark For JAVA Regex Head(15 times)
+	time(s)	found
+AVE:	0.027	5111.0
+
+Benchmark For JAVA IndexOf(15 times)
+	time(s)	found
+AVE:	0.0088	13360.0
+
 【   Mysql   】
 BenchMark For MYSQL %str% NO INDEX (15 times)
 	found	time(s)
